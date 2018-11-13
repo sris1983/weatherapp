@@ -49,7 +49,6 @@ public class WeatherServiceTest {
 				.andRespond(withSuccess(
 						new ClassPathResource("forecast-barcelona.json", getClass()),
 						MediaType.APPLICATION_JSON));
-		//this.weatherService.getWeatherForecast("es", "barcelona");
 		this.weatherService.getWeatherForecast("barcelona");
 		this.server.verify();
 	}
