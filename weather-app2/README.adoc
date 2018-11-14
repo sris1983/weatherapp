@@ -15,7 +15,6 @@ using command mvn spring-boot:run
 
 once all spring application is running --> open browser paste below link
 http://localhost:8080/api/weather/threedays/London
-http://localhost:8080/api/weather/now/London
 
 for Swagger-->http://localhost:8080/swagger-ui.html#
 once the page swagger page is opened click on weather-api-controller to use weather application endpoints
