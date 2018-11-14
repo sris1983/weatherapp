@@ -14,7 +14,7 @@ public class WeatherEntry implements Serializable {
 
 	private double temperature;
 
-	private Integer weatherId;
+	private double pressure;
 
 	private String weatherIcon;
 
@@ -42,14 +42,15 @@ public class WeatherEntry implements Serializable {
 	@JsonProperty("main")
 	public void setMain(Map<String, Object> main) {
 		setTemperature(Double.parseDouble(main.get("temp").toString()));
+		setPressure(Double.parseDouble(main.get("pressure").toString()));
 	}
 
-	public Integer getWeatherId() {
-		return this.weatherId;
+	public double getPressure() {
+		return this.pressure;
 	}
-
-	public void setWeatherId(Integer weatherId) {
-		this.weatherId = weatherId;
+	
+	public void setPressure(double pressure) {
+		this.pressure = pressure;
 	}
 
 	public String getWeatherIcon() {
@@ -63,7 +64,6 @@ public class WeatherEntry implements Serializable {
 	@JsonProperty("weather")
 	public void setWeather(List<Map<String, Object>> weatherEntries) {
 		Map<String, Object> weather = weatherEntries.get(0);
-		setWeatherId((Integer) weather.get("id"));
 		setWeatherIcon((String) weather.get("icon"));
 	}
 
